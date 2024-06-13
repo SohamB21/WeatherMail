@@ -7,16 +7,11 @@
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
             rel="stylesheet"
         />
-        <style>
-            .list-group-item {
-                padding-top: 5px;
-                padding-bottom: 5px;
-            }
-        </style>
+        <link href="styles.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="container mt-4">
-            <h2 class="text-center mb-5">
+        <div class="container mt-5">
+            <h2 class="text-center mb-4 font-italic">
                 Get Your Personalized Weather Report
             </h2>
             <form action="getWeather.php" method="POST" class="row mb-3">
@@ -41,8 +36,9 @@
             <div class="card">
                 <div class="card-header bg-primary text-white">
                     <h4 class="mb-0">
-                        Weather Report for <?= $weatherData['location']['name']
-                        ?>, <?= $weatherData['location']['country'] ?>
+                        Weather Report for 
+                        <?= $weatherData['location']['name'] ?>, 
+                        <?= $weatherData['location']['country'] ?>.
                     </h4>
                 </div>
                 <div class="card-body">
@@ -50,7 +46,7 @@
                         <div class="col-md-6">
                             <div class="list-group">
                                 <h5
-                                    class="list-group-item list-group-item-action active"
+                                    class="list-group-item list-group-item-action list-group-item-success"
                                 >
                                     Current Weather
                                 </h5>
@@ -84,7 +80,7 @@
                         <div class="col-md-6">
                             <div class="list-group">
                                 <h5
-                                    class="list-group-item list-group-item-action active"
+                                    class="list-group-item list-group-item-action list-group-item-warning"
                                 >
                                     Additional Details
                                 </h5>
