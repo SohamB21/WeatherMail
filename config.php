@@ -1,5 +1,6 @@
 <?php
 
 define('WEATHER_API_KEY', '7d01b4eb78a148a48c9151928241206');
+define('OPENAI_API_KEY', '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');
 
 ?>

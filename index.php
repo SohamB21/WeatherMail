@@ -112,6 +112,21 @@
                         </div>
                     </div>
                 </div>
+                <form
+                    action="weatherSummary.php"
+                    method="POST"
+                    class="text-center mb-5"
+                >
+                    <!-- Pass weatherData as hidden input to weatherSummary.php -->
+                    <input
+                        type="hidden"
+                        name="weatherData"
+                        value="<?= htmlentities(json_encode($weatherData)) ?>"
+                    />
+                    <button type="submit" class="btn btn-success">
+                        Get Weather Summary
+                    </button>
+                </form>
             </div>
             <?php endif; ?>
         </div>

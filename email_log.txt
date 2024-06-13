@@ -1,0 +1,22 @@
+Sending email to: soham0110banik@gmail.com
+Subject: Weather Report
+Body:
+<br />
+<b>Warning</b>:  Undefined variable $weatherReport in <b>D:\xampp\htdocs\WeatherMail\weatherSummary.php</b> on line <b>58</b><br />
+
+Headers:
+MIME-Version: 1.0
+Content-type:text/html;charset=UTF-8
+From: weathermail.ai@gmail.com
+
+Sending email to: soham0110banik@gmail.com
+Subject: Weather Report
+Body:
+<br />
+<b>Warning</b>:  Undefined variable $weatherReport in <b>D:\xampp\htdocs\WeatherMail\weatherSummary.php</b> on line <b>58</b><br />
+
+Headers:
+MIME-Version: 1.0
+Content-type:text/html;charset=UTF-8
+From: weathermail.ai@gmail.com
+
