@@ -16,8 +16,8 @@ class EmailService
             $mail->isSMTP(); // Set mailer to use SMTP
             $mail->Host       = 'smtp.gmail.com'; // Specify main and backup SMTP servers
             $mail->SMTPAuth   = true; // Enable SMTP authentication
-            $mail->Username   = 'weathermail.ai@gmail.com'; // SMTP username
-            $mail->Password   = 'vlwrrirkfiencqka'; // SMTP password (use app password if 2FA enabled)
+            $mail->Username   = EMAIL_USERNAME; // SMTP username from config.php
+            $mail->Password   = EMAIL_PASSWORD; // SMTP password from config.php
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption, `ssl` also accepted
             $mail->Port       = 587; // TCP port to connect to
 

@@ -60,7 +60,7 @@
 
                     $emailBody = "Hello,
 
-                    We're delighted to provide you with the current weather update for {$location}:
+                    We're delighted to provide you with the current weather update for {$location}!
 
                     {$defaultWeatherData}
 
