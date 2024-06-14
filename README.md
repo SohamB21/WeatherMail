@@ -3,6 +3,7 @@
 WeatherMail is a web application that provides weather summaries via email using OpenAI's natural language generation and a weather API.
 
 ![Screenshot (115)](https://github.com/SohamB21/WeatherMail/assets/105418470/ba638882-b53e-44c5-85e0-277821b10c78)
+![Screenshot (119)](https://github.com/SohamB21/WeatherMail/assets/105418470/745494b6-85e0-41ab-9dbd-ae6dbccd58ca)
 
 ## Installation
 
