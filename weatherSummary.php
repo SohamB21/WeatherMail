@@ -29,7 +29,19 @@
                         $weatherReport = $openaiService->generateWeatherReport($weatherData);
                         echo '<p>' . $weatherReport . '</p>';
                     } catch (Exception $e) {
-                        echo '<div class="alert alert-danger" role="alert">Weather Report Cannot Be Generated Because: ' . $e->getMessage() . '</div>';
+                        $errorMessage = $e->getMessage();
+                        $location = $weatherData['location']['name'] ?? 'Unknown location';
+                        $temp_c = $weatherData['current']['temp_c'] ?? 'N/A';
+                        $humidity = $weatherData['current']['humidity'] ?? 'N/A';
+                        $precipitation = $weatherData['current']['precip_mm'] ?? 'N/A';
+                        $condition = $weatherData['current']['condition']['text'] ?? 'N/A';
+
+                        $defaultMessage = "Currently in {$location}, the temperature is {$temp_c} °C with a humidity of {$humidity} %. Precipitation is at {$precipitation} mm and the weather condition is described as '{$condition}'.";
+
+                        echo '<div class="alert alert-info" role="alert">';
+                        echo $defaultMessage;
+                        echo '</div>';
+                        echo '<div class="alert alert-danger" role="alert">OpenAI Could Not Generate Weather Report Because: ' . $e->getMessage() . '</div>';
                     }
                 } else {
                     echo '<div class="alert alert-danger" role="alert">No weather data received.</div>';

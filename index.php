@@ -31,8 +31,8 @@
                     </button>
                 </div>
             </form>
-            <?php if (isset($_GET['weather'])): ?> <?php $weatherData =
-            json_decode($_GET['weather'], true); ?>
+            <?php if (isset($_GET['weather'])): ?> 
+            <?php $weatherData = json_decode($_GET['weather'], true); ?>
             <div class="card">
                 <div class="card-header bg-primary text-white">
                     <h4 class="mb-0">
@@ -86,15 +86,14 @@
                                 </h5>
                                 <p class="list-group-item">
                                     Feels Like: <?=
-                                    $weatherData['current']['feelslike_c'] ?>°C
+                                    $weatherData['current']['feelslike_c'] ?> °C
                                 </p>
                                 <p class="list-group-item">
                                     Visibility: <?=
                                     $weatherData['current']['vis_km'] ?> km
                                 </p>
                                 <p class="list-group-item">
-                                    UV Index: <?= $weatherData['current']['uv']
-                                    ?>
+                                    UV Index: <?= $weatherData['current']['uv'] ?>
                                 </p>
                                 <p class="list-group-item">
                                     Last Updated: <?=
@@ -102,7 +101,7 @@
                                 </p>
                                 <p class="list-group-item">
                                     Cloud Cover: <?=
-                                    $weatherData['current']['cloud'] ?>%
+                                    $weatherData['current']['cloud'] ?> %
                                 </p>
                                 <p class="list-group-item">
                                     Gust Speed: <?=
