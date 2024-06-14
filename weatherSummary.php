@@ -43,8 +43,6 @@
                         echo '</div>';
                         echo '<div class="alert alert-danger" role="alert">OpenAI Could Not Generate Weather Report Because: ' . $e->getMessage() . '</div>';
                     }
-                } else {
-                    echo '<div class="alert alert-danger" role="alert">No weather data received.</div>';
                 }
 
                 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['weatherReport']) && isset($_POST['email'])) {
