@@ -1,28 +1,39 @@
 <?php
+require 'vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 class EmailService
 {
     public function sendEmail($to, $subject, $body)
     {
-        $headers = "MIME-Version: 1.0\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8\r\n";
-        $headers .= 'From: weathermail.ai@gmail.com' . "\r\n";
+        $mail = new PHPMailer(true);
 
-        $logMessage = "Sending email to: $to\nSubject: $subject\nBody:\n$body\nHeaders:\n$headers\n";
+        try {
+            //Server settings
+            $mail->SMTPDebug = 0; // Disable verbose debug output (set to 2 for debugging)
+            $mail->isSMTP(); // Set mailer to use SMTP
+            $mail->Host       = 'smtp.gmail.com'; // Specify main and backup SMTP servers
+            $mail->SMTPAuth   = true; // Enable SMTP authentication
+            $mail->Username   = 'weathermail.ai@gmail.com'; // SMTP username
+            $mail->Password   = 'vlwrrirkfiencqka'; // SMTP password (use app password if 2FA enabled)
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption, `ssl` also accepted
+            $mail->Port       = 587; // TCP port to connect to
 
-        file_put_contents('email_log.txt', $logMessage, FILE_APPEND);
+            //Recipients
+            $mail->setFrom('weathermail.ai@gmail.com', 'WeatherMail');
+            $mail->addAddress($to); // Add a recipient
 
-        // To send HTML mail, the Content-type header must be set
-        $headers .= "Content-type: text/html\r\n";
+            // Content
+            $mail->isHTML(true); // Set email format to HTML
+            $mail->Subject = $subject;
+            $mail->Body    = $body;
 
-        // Additional headers
-        $headers .= "From: weathermail.ai@gmail.com\r\n";
-
-        // Mail it
-        if (mail($to, $subject, $body, $headers)) {
+            $mail->send();
             echo '<div class="alert alert-success" role="alert">Email sent successfully!</div>';
-        } else {
-            echo '<div class="alert alert-danger" role="alert">Error sending email.</div>';
+        } catch (Exception $e) {
+            echo '<div class="alert alert-danger" role="alert">Error sending email: ' . $mail->ErrorInfo . '</div>';
         }
     }
 }
